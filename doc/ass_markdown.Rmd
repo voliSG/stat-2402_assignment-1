@@ -1,0 +1,49 @@
+---
+title: "Assignment 1"
+output: pdf_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Student #: 23088091  
+Name : Sean Peralta Garcia
+
+
+# 1. Executive Summary
+
+# 2. Introduction
+
+# 3. Methodology
+* plot() - plots all combinations of terms
+  + only use some in results - ones of note
+
+* plot measures with different factors and if the least squares difference line crosses then it has interaction
+--------
+* mathematical justification for choosing transformation
+* find relationship approx linear
+* with approx constant variance
+
+* scatter plot to see if there are any obvious transformations
+  + and least squares regression line to find outliers (find points above and below line)
+* fit a linear model wk2 and 3 lab - no r code shown
+* residual plot to see what variables should be transformed
+* estimated regression line
+* cross table
+* residual plot
+
+# 4. Results
+
+# 5. Discussion
+
+# 6. References
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
