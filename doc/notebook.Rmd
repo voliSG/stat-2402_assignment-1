@@ -1,0 +1,38 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+rm(list = ls())
+library(tidyverse)
+library(ggplot2)
+library(lmtest)
+```
+
+```{r}
+df = read.table("../data/houseprices.txt", header = TRUE, sep = "\t")
+df$Fireplace <- as.factor(df$Fireplace)
+summary(df)
+
+```
+
+```{r fig.height=30, fig.width=40}
+plot(df)
+```
+
+```{r}
+data.full_lm <- lm(Price ~ ., data = df)
+summary(data.full_lm)
+plot(data.full_lm)
+```
+
+```{r}
+# residual plot
+data.full_res = resid(data.full_lm)
+```
+
+```{r}
+# whites test
+bptest(data.full_lm, ~ disp*hp*am + I(disp^2) + I(hp^2)+ I(am^2), data = mtcars)
+```
