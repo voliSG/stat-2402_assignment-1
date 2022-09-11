@@ -16,7 +16,7 @@
 %\setcounter{tocdepth}{2}
 
 \title
-{Hedonic Regression Analysis in Saratoga, New York}
+{Effects of Structural Characteristics on House Prices}
 \author{Sean Peralta Garcia (23088091)}
 \date {}
 
@@ -28,18 +28,54 @@
 
 \section{Executive Summary}
 \section{Introduction}
+  Owning a house is one of the biggest investments a person can make. As such, it 
+  is of great interest to prospective buyers, sellers and lenders to accurately
+  predict the price of a home. There are a range of models and techniques that 
+  attempt to predict the price of a home, from observational appraisals all 
+  the way to machine learning models\cite{hedonic_ai}. One method widely studied is that of
+  hedonic pricing. A Hedonic Pricing Model (henceforth, HPM) is a model that 
+  attempts to estimate the price of a good by taking its observable characteristics
+  and then weighting them according to their relative impact on the price. Models
+  utilise a range of measures that can be categorised into several groups, 
+  namely structural, neighbourhood, and environmental. \cite{hedonic_rev} Hearth and Maier,
+  in a literature review of HPMs for real estate, had identified that the 
+  neighbourhood and environmental factors were generally over-researched. While
+  social factors and the "implicit value of structural characteristics" was 
+  under-researched.\cite{lit_rev}
+
+  \subsection{Related Work}
+  There appears to be a consensus that creating a HPM, particularly focussing on
+  structural characteristics, has problems with heteroskedasticity. This means
+  that linear models may not be entirely appropriate to estimate the response.
+  This was sought to be relieved by Selim, Limsombunchai and Malpezzi by using
+  a semi-logarithmic form wherein the response variable is transformed by the natural log.
+  \cite{hedonic_ai, hedonic_rev, hedonic_regress} Additionally, Malpezzi explains
+  that this effectively allows value added to the house to be proportional to 
+  other variables in the model and for an easier interpretation of coefficients
+  such that the coefficient of a measure is the percentage change for 1 unit 
+  difference in the measure.\cite{hedonic_rev}
+    
+  \subsection{Data Set}
+  
+  \subsection{Aim}
+  Build 
 \section{Methodology}
 \section{Results}
 \section{Discussion}
 
-\bibliographystyle{plain}
+\bibliographystyle{apalike}
 \begin{thebibliography}{9}
-\bibitem{rbook}
-Michael J. Crawley,
-  \textit{The R Book},
-  John Wiley \& Sons, Ltd, West Sussex, UK,
-  2nd edition,
-  2012.
+\bibitem{lit_rev}
+Herath, S. K. Maier, G. (2010). The hedonic price method in real estate and housing market research. A review of the literature.. Institute for Regional Development and Environment (pp. 1-21). Vienna, Austria: University of Economics and Business.
+
+\bibitem{hedonic_ai}
+Limsombunchai, V. (2004). House price prediction: Hedonic price model vs. artificial neural network. New Zealand Agricultural and Resource Economics Society Conference, 25-26 June 2004. Blenheim, New Zealand: New Zealand Agricultural and Resource Economics Society.
+
+\bibitem{hedonic_rev}
+Malpezzi, S. (2003). Hedonic pricing models: a selective and applied review. Housing economics and public policy, 1, 67-89.
+
+\bibitem{hedonic_regress}
+Selim, S. (2008). DETERMINANTS OF HOUSE PRICES IN TURKEY: A HEDONIC REGRESSION MODEL . Dogus Universitesi Dergisi , 9 (1) , 65-76 . Retrieved from 
 \end{thebibliography}
 
 \end{document}
