@@ -12,6 +12,13 @@ Name : Sean Peralta Garcia
 # 1. Executive Summary
 
 # 2. Introduction
+* talk about literature reviews
+* explain how i think that the house prices in saratoga will largely follow the patterns seen in other places
+* explain my data - prices and variables from houses in saratoga and what - all details about property
+  + assumed that the prices of the properties are taken at the same time (demand pressures)
+  + data is only intrinsic to property, no location data - same neighbourhood so assume this is a non factor
+  + different types of independent variables
+* state my hypothesis and aims of analysis
 
 # 3. Methodology
 * plot() - plots all combinations of terms
@@ -25,6 +32,7 @@ Name : Sean Peralta Garcia
 
 * scatter plot to see if there are any obvious transformations
   + and least squares regression line to find outliers (find points above and below line)
+  + residuals vs fitted and select outliers more than 2std deviations
 * fit a linear model wk2 and 3 lab - no r code shown
 * residual plot to see what variables should be transformed
 * estimated regression line
