@@ -8,8 +8,8 @@
 
 \textwidth 16.5cm
 \hoffset -2.0cm
-\textheight 23cm
-\voffset -1.5cm
+\textheight 24cm
+\voffset -3cm
 
 \newcommand{\tR}{\texttt{R}}
 \newcommand{\adist}{\overset{\cdot}{\underset{\cdot}{\sim}}}
@@ -67,13 +67,53 @@
   
   \subsection{Aim}
   The aim of this report is to fit a model that will attempt to determine how 
-  the price of a house depends on the other variables provided. Significant 
+  the price of a house depends its structural characteristics. Significant 
   variables that appear in the Turkish model will be explored in the Saratoga 
   data set to see if they also play a significant role in predicting house price.
 
 \section{Methodology}
+The methodology to be used in this report will be split into two parts. Data
+exploration and model fitting.
+  \subsection{Data Exploration}
+  Firstly, the scatter plots between independent and dependent variables will be 
+  visually analysed to identify relationships and distribution of data. Then the 
+  scatter plots between independent variables will be visually analysed to quickly 
+  identify multicollinear variables. Additionally, correlation analysis will be used to 
+  supplement the visual analysis. This process will aim to identify redundant and 
+  non-contributing variables that we can safely assume can be excluded from the 
+  final model.  
+  Variables that are suspected to have interaction are investigated by running linear 
+  regressions with only those interaction terms and analysing the interaction plots.
+  If an interaction effect is apparent then that interaction term will be considered
+  in model fitting.
+  \subsection{Model fitting}
+  Model fitting will be done with backwards elimination, including found interaction 
+  variables. Firstly, the collinear variables will be removed from the model and 
+  tested using the F-test to check for a better fit. Then normal backwards elimination 
+  will be applied.
 \section{Results}
   \subsection{Data Exploration}
+  \begin{itemize}
+    \item Size - strong, positive linear
+    \item Baths - weak, positive linear
+    \item Bedrooms - weak, maybe non linear (perhaps a parabola)
+    \item Fireplace - positive - houses with a fireplace have a higher range of price
+    and higher mean
+    \item Acres - weak (possibly no relationship), non linear (log?) - most houses under 
+    500 occur between a range of acres - expensive houses are generally on smaller
+    sized plots with 1 outlier (most expensive at 6 acres)
+    \item Age - similar to acres 
+  \end{itemize}
+
+  Now possible interaction terms will be investigated. The following are possible 
+  interactions that will be investigated
+  \begin{itemize}
+  \item Baths:Size - some explanation
+  \item Bedrooms:Size
+  \item Acres:Size
+  \item Fireplace:Age
+  \end{itemize}
+
   \subsection{Model fitting}
 \section{Discussion}
 

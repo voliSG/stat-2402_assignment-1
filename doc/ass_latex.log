@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.9)  11 SEP 2022 21:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.9)  12 SEP 2022 17:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -235,20 +235,27 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 [1
 
-{c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./ass_latex.aux) ) 
+{c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Trying to load font information for TS1+aer on input line 97.
+(c:/Program Files/R/R-4.1.0/share/texmf/tex/latex/ts1aer.fd
+File: ts1aer.fd 
+)
+LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 97.
+[2] [3] (./ass_latex.aux) ) 
 Here is how much of TeX's memory you used:
- 4850 strings out of 477035
- 86126 string characters out of 5826235
- 419779 words of memory out of 5000000
- 25911 multiletter control sequences out of 15000+600000
- 488176 words of font info for 65 fonts, out of 8000000 for 9000
+ 4875 strings out of 477035
+ 86545 string characters out of 5826235
+ 420779 words of memory out of 5000000
+ 25932 multiletter control sequences out of 15000+600000
+ 488511 words of font info for 66 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 70i,6n,79p,368b,222s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on ass_latex.pdf (2 pages, 67224 bytes).
+ 70i,6n,79p,368b,216s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on ass_latex.pdf (3 pages, 69727 bytes).
 PDF statistics:
- 31 PDF objects out of 1000 (max. 8388607)
- 18 compressed objects within 1 object stream
+ 39 PDF objects out of 1000 (max. 8388607)
+ 24 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -17,22 +17,32 @@ summary(df)
 
 ```
 
-```{r fig.height=30, fig.width=40}
-plot(df)
+```{r fig.height=10, fig.width=15}
+plot(df$Size, df$Price)
+
+plot(df$Baths, df$Price)
+plot(df$Bedrooms, df$Price)
+plot(df$Fireplace, df$Price)
+plot(df$Acres, df$Price)
+plot(df$Age, df$Price)
 ```
 
 ```{r}
-data.full_lm <- lm(Price ~ ., data = df)
-summary(data.full_lm)
-plot(data.full_lm)
+df.full_lm <- lm(Price ~ ., data = df)
+df.full_res = resid(df.full_lm)
+summary(df.full_lm)
+
+
+
+                # the horizon
 ```
 
 ```{r}
-# residual plot
-data.full_res = resid(data.full_lm)
+# log of response
+data.full_loglm = 
 ```
 
 ```{r}
 # whites test
-bptest(data.full_lm, ~ disp*hp*am + I(disp^2) + I(hp^2)+ I(am^2), data = mtcars)
+bptest(df.full_lm, ~ disp*hp*am + I(disp^2) + I(hp^2)+ I(am^2), data = mtcars)
 ```
