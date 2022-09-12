@@ -104,6 +104,18 @@ exploration and model fitting.
     sized plots with 1 outlier (most expensive at 6 acres)
     \item Age - similar to acres 
   \end{itemize}
+  
+  \emph{}
+  \begin{Soutput}
+              Price  Size Baths Bedrooms Fireplace Acres   Age
+    Price      1.00  0.77  0.67     0.47      0.41  0.18 -0.26
+    Size       0.77  1.00  0.74     0.67      0.47  0.22 -0.23
+    Baths      0.67  0.74  1.00     0.51      0.45  0.13 -0.40
+    Bedrooms   0.47  0.67  0.51     1.00      0.30  0.15 -0.04
+    Fireplace  0.41  0.47  0.45     0.30      1.00  0.06 -0.24
+    Acres      0.18  0.22  0.13     0.15      0.06  1.00  0.01
+    Age       -0.26 -0.23 -0.40    -0.04     -0.24  0.01  1.00
+  \end{Soutput}
 
   Now possible interaction terms will be investigated. The following are possible 
   interactions that will be investigated
