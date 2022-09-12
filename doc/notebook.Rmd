@@ -12,6 +12,7 @@ library(Hmisc)
 ```
 
 ```{r}
+rm(list = ls())
 df = read.table("../data/houseprices.txt", header = TRUE, sep = "\t")
 df$Fireplace <- as.factor(df$Fireplace)
 summary(df)
@@ -23,13 +24,14 @@ plot(df)
 rcorr(as.matrix(df), type = c("pearson","spearman"))
 ```
 
-```{r fig.height=10, fig.width=15}
+```{r fig.height=7, fig.width=10}
 plot(df$Size, df$Price, xlab="Area (square ft)", ylab="Price ($ ,000)", main="Price by Size")
 plot(df$Baths, df$Price, xlab="# of Baths", ylab="Price ($ ,000)", main="Price by Baths")
 plot(df$Bedrooms, df$Price, xlab="# of Bedrooms", ylab="Price ($ ,000)", main="Price by Bedrooms")
 plot(df$Fireplace, df$Price, xlab="has fireplace", ylab="Price ($ ,000)", main="Price by Fireplace")
-plot(df$Acres, df$Price, xlab="Acres", ylab="Price ($ ,000)", main="Price by Acres")
+plot(df$Acres, df$Price, xlab="log(Acres)", ylab="Price ($ ,000)", main="Price by Acres")
 plot(df$Age, df$Price, xlab="Age (Years)", ylab="Price ($ ,000)", main="Price by Age")
+#plot(log(df$Acres), df$Price, xlab="Acres", ylab="Price ($ ,000)", main="Price by Acres")
 ```
 
 ```{r}

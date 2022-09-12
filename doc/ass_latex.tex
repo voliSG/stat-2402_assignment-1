@@ -1,4 +1,6 @@
 \documentclass[10pt,A4,makeidx]{article}
+\usepackage{graphicx}
+\usepackage{grffile}
 \usepackage{color}
 \usepackage{amsmath}
 \usepackage{float}
@@ -6,10 +8,12 @@
 \usepackage{comment}
 \UseRawInputEncoding
 
+\graphicspath{ {./visuals/} }
+
 \textwidth 16.5cm
 \hoffset -2.0cm
 \textheight 24cm
-\voffset -3cm
+\voffset -2.5cm
 
 \newcommand{\tR}{\texttt{R}}
 \newcommand{\adist}{\overset{\cdot}{\underset{\cdot}{\sim}}}
@@ -32,32 +36,31 @@
   is of great interest to prospective buyers, sellers and lenders to accurately
   predict the price of a home. There are a range of models and techniques that 
   attempt to predict the price of a home, from observational appraisals all 
-  the way to machine learning models\cite{hedonic_ai}. One method widely studied is that of
+  the way to machine learning models[2]. One method widely studied is that of
   hedonic pricing. A Hedonic Pricing Model (henceforth, HPM) is a model that 
   attempts to estimate the price of a good by taking its observable characteristics
   and then weighting them according to their relative impact on the price. Models
   utilise a range of measures that can be categorised into several groups, 
-  namely structural, neighbourhood, and environmental. \cite{hedonic_rev} Hearth and Maier,
+  namely structural, neighbourhood, and environmental.[3] Hearth and Maier,
   in a literature review of HPMs for real estate, had identified that the 
   neighbourhood and environmental factors were generally over-researched. While
   social factors and the "implicit value of structural characteristics" was 
-  under-researched.\cite{lit_rev}
+  under-researched.[1]
 
   \subsection{Related Work}
   There appears to be a consensus that creating a HPM, particularly focussing on
   structural characteristics, has problems with heteroskedasticity. This means
   that linear models may not be entirely appropriate to estimate the response.
   This was sought to be relieved by Selim, Limsombunchai and Malpezzi by using
-  a semi-logarithmic form wherein the response variable is transformed by the natural log.
-  \cite{hedonic_ai, hedonic_rev, hedonic_regress} Additionally, Malpezzi explains
+  a semi-logarithmic form wherein the response variable is transformed by the natural log.[2, 3, 4]
+  Additionally, Malpezzi explains
   that this effectively allows value added to the house to be proportional to 
   other variables in the model and for an easier interpretation of coefficients
   such that the coefficient of a measure is the percentage change for 1 unit 
-  difference in the measure.\cite{hedonic_rev}
+  difference in the measure.[3]
   In the end Selim concluded that water system, presence of a pool, the type of house,
   number of rooms, house size, locational characteristics and building type were
-  the most significant variables to affect house prices in the country of Turkey.
-  \cite{hedonic_regress}
+  the most significant variables to affect house prices in the country of Turkey.[4]
     
   \subsection{Data Set}
   The data set contains data on houses in Saratoga County, New York; collected by
@@ -76,10 +79,11 @@ The methodology to be used in this report will be split into two parts. Data
 exploration and model fitting.
   \subsection{Data Exploration}
   Firstly, the scatter plots between independent and dependent variables will be 
-  visually analysed to identify relationships and distribution of data. Then the 
-  scatter plots between independent variables will be visually analysed to quickly 
+  visually analysed to identify relationships and distribution of data. Strangely
+  distributed data will attemp to be transformed to find a linear relationship to 
+  the price. After, scatter plots between independent variables will be visually analysed to quickly 
   identify multicollinear variables. Additionally, correlation analysis will be used to 
-  supplement the visual analysis. This process will aim to identify redundant and 
+  supplement the visual analyses. This process will aim to identify redundant and 
   non-contributing variables that we can safely assume can be excluded from the 
   final model.  
   Variables that are suspected to have interaction are investigated by running linear 
@@ -93,29 +97,33 @@ exploration and model fitting.
   will be applied.
 \section{Results}
   \subsection{Data Exploration}
+
+  Below are the relationships between the Price and independent variables.\\
+  \emph{Correlation data in appendix figure 1 and 2.}
   \begin{itemize}
-    \item Size - strong, positive linear
-    \item Baths - weak, positive linear
-    \item Bedrooms - weak, maybe non linear (perhaps a parabola)
-    \item Fireplace - positive - houses with a fireplace have a higher range of price
-    and higher mean
-    \item Acres - weak (possibly no relationship), non linear (log?) - most houses under 
-    500 occur between a range of acres - expensive houses are generally on smaller
-    sized plots with 1 outlier (most expensive at 6 acres)
-    \item Age - similar to acres 
+    \item Size - exhibits a strong, positive linear relationship. (correlation: 0.77)
+    \item Baths - exhibits a moderate, positive linear relationship. (correlation: 0.67)
+    \item Bedrooms - exhibits a weak linear relationship (correlation: 0.47)
+    \item Fireplace - exhibits a weak, positive linear relationship - houses 
+    with a fireplace have a higher range of price, as well as a higher mean (correlation: 0.41)
+    \\(\emph{Correlation data in appendix figure 3.})
+    \item Acres - little to no linear relationship - data is heavily left skewed (\emph{see below})  
+      \subitem - acres are all clustered closer to 0 (correlation: 0.18)
+    \item Age - little to no linear relationship - heavily left skewed (\emph{see below})
+      \subitem - majority of properties are grouped
+    towards 0 age (correlation: -0.26)\\
   \end{itemize}
   
-  \emph{}
-  \begin{Soutput}
-              Price  Size Baths Bedrooms Fireplace Acres   Age
-    Price      1.00  0.77  0.67     0.47      0.41  0.18 -0.26
-    Size       0.77  1.00  0.74     0.67      0.47  0.22 -0.23
-    Baths      0.67  0.74  1.00     0.51      0.45  0.13 -0.40
-    Bedrooms   0.47  0.67  0.51     1.00      0.30  0.15 -0.04
-    Fireplace  0.41  0.47  0.45     0.30      1.00  0.06 -0.24
-    Acres      0.18  0.22  0.13     0.15      0.06  1.00  0.01
-    Age       -0.26 -0.23 -0.40    -0.04     -0.24  0.01  1.00
-  \end{Soutput}
+  Due to the low correlations of fireplace, acres and age, we can assume that
+  they are unlikely to come up in the final model.
+  
+  \begin{center}
+    \includegraphics[width=8cm]{price-acres.png}
+    \includegraphics[width=8cm]{price-age.png}
+  \end{center}
+  
+  Now we will find collinear variables by analysing 
+  
 
   Now possible interaction terms will be investigated. The following are possible 
   interactions that will be investigated
@@ -127,6 +135,10 @@ exploration and model fitting.
   \end{itemize}
 
   \subsection{Model fitting}
+  \begin{center}
+    \includegraphics[width=8cm]{full-res.png}
+    \includegraphics[width=8cm]{full-resln.png}
+  \end{center}
   First fitted the full model - without interactions - to check residual plot
   (shows a non constant errors in residual plot) high RSE (52.15) - proof of 
   heteroskedasticity shown in the other studies.
@@ -134,6 +146,7 @@ exploration and model fitting.
   previous studies a lot - RSE lower (0.279) thus indicating a the response variable
   follows a log relationship to the independent variables in the model
 \section{Discussion}
+age and acres might have been able to be transformed in order to find a relationship
 
 \bibliographystyle{apalike}
 \begin{thebibliography}{9}
@@ -149,5 +162,25 @@ Malpezzi, S. (2003). Hedonic pricing models: a selective and applied review. Hou
 \bibitem{hedonic_regress}
 Selim, S. (2008). DETERMINANTS OF HOUSE PRICES IN TURKEY: A HEDONIC REGRESSION MODEL . Dogus Universitesi Dergisi , 9 (1) , 65-76 . Retrieved from 
 \end{thebibliography}
+
+\pagebreak
+\section*{Appendix.}
+  \emph{\\Figure 1 - Correlation coefficients for untransformed data}
+  \begin{Soutput}
+              Price  Size Baths Bedrooms Fireplace Acres   Age
+    Price      1.00  0.77  0.67     0.47      0.41  0.18 -0.26
+    Size       0.77  1.00  0.74     0.67      0.47  0.22 -0.23
+    Baths      0.67  0.74  1.00     0.51      0.45  0.13 -0.40
+    Bedrooms   0.47  0.67  0.51     1.00      0.30  0.15 -0.04
+    Fireplace  0.41  0.47  0.45     0.30      1.00  0.06 -0.24
+    Acres      0.18  0.22  0.13     0.15      0.06  1.00  0.01
+    Age       -0.26 -0.23 -0.40    -0.04     -0.24  0.01  1.00
+  \end{Soutput}
+  
+  \emph{Figure 2 - All plots}\\
+  \includegraphics[scale=2]{plot.png}
+  
+  \emph{Figure 3 - Price by Fireplace boxplot}\\
+  \includegraphics[scale=0.4]{price-fireplace.png}
 
 \end{document}
