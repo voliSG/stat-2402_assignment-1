@@ -10,8 +10,8 @@
 
 \graphicspath{ {./visuals/} }
 
-\textwidth 16.5cm
-\hoffset -2.0cm
+\textwidth 18cm
+\hoffset -3.0cm
 \textheight 24cm
 \voffset -2.5cm
 
@@ -84,7 +84,7 @@ exploration and model fitting.
   the price. After, scatter plots between independent variables will be visually analysed to quickly 
   identify multicollinear variables. Additionally, correlation analysis will be used to 
   supplement the visual analyses. This process will aim to identify redundant and 
-  non-contributing variables that we can safely assume can be excluded from the 
+  non-contributing variables that we may expect will be excluded from the 
   final model.  
   Variables that are suspected to have interaction are investigated by running linear 
   regressions with only those interaction terms and analysing the interaction plots.
@@ -92,7 +92,7 @@ exploration and model fitting.
   in model fitting.
   \subsection{Model fitting}
   Model fitting will be done with backwards elimination, including found interaction 
-  variables. Firstly, the collinear variables will be removed from the model and 
+  variables. Firstly, the collinear and redundant variables will be removed from the model and 
   tested using the F-test to check for a better fit. Then normal backwards elimination 
   will be applied.
 \section{Results}
@@ -103,36 +103,51 @@ exploration and model fitting.
   \begin{itemize}
     \item Size - exhibits a strong, positive linear relationship. (correlation: 0.77)
     \item Baths - exhibits a moderate, positive linear relationship. (correlation: 0.67)
-    \item Bedrooms - exhibits a weak linear relationship (correlation: 0.47)
+    \item Bedrooms - exhibits a moderate linear relationship (correlation: 0.47)
     \item Fireplace - exhibits a weak, positive linear relationship - houses 
     with a fireplace have a higher range of price, as well as a higher mean (correlation: 0.41)
-    \\(\emph{Correlation data in appendix figure 3.})
-    \item Acres - little to no linear relationship - data is heavily left skewed (\emph{see below})  
+    (\emph{Correlation data in appendix figure 3.})
+    \item Acres - little to no linear relationship - data is heavily right skewed 
       \subitem - acres are all clustered closer to 0 (correlation: 0.18)
-    \item Age - little to no linear relationship - heavily left skewed (\emph{see below})
+    \item Age - little to no linear relationship - heavily right skewed
       \subitem - majority of properties are grouped
     towards 0 age (correlation: -0.26)\\
   \end{itemize}
   
-  Due to the low correlations of fireplace, acres and age, we can assume that
-  they are unlikely to come up in the final model.
+  Acres and age appeared to show a right skewed nature, therefore a logarithmic transformation was applied
+  in order to achieve a more normal distribution.\emph{Figure 4 - Correlation coefficients for log transformed data}\\
   
+  \emph{Price by Acres and Price by Age}\\
   \begin{center}
     \includegraphics[width=8cm]{price-acres.png}
     \includegraphics[width=8cm]{price-age.png}
   \end{center}
   
-  Now we will find collinear variables by analysing 
+  \emph{Price by log10(Acres) and Price by log10(Age)}\\
+  \begin{center}
+    \includegraphics[width=8cm]{price-logacres.png}
+    \includegraphics[width=8cm]{price-logage.png}
+  \end{center}
   
-
-  Now possible interaction terms will be investigated. The following are possible 
-  interactions that will be investigated
+  Now we will find collinear variables, firstly by visually inspecting the plot
+  of all variables (\emph{see appendix fig. 2}). From this we can observe that the
+  following have correlations of:
   \begin{itemize}
-  \item Baths:Size - some explanation
-  \item Bedrooms:Size
-  \item Acres:Size
-  \item Fireplace:Age
+    \item Size and Baths (correlation: 0.77)
+    \item Size and Bedrooms (correlation: 0.67)
+    \item Baths and Bedrooms (correlation: 0.51)\\
   \end{itemize}
+  
+  Interaction terms involving the fireplace metric were investigated as it was the only 
+  categorical variable available to us. Only the size variable appeared to
+  have somewhat of an interaction as shown below. Black dots showing no fireplace, and
+  red dots showing the presence of a fireplace. Fireplaces seem to appear in houses 
+  of all sizes but as houses become larger, the more prevalent a fireplace becomes.\\
+  \begin{center}
+    \includegraphics[width=15cm]{int-fireplacesize.png}
+  \end{center}
+  
+  
 
   \subsection{Model fitting}
   \begin{center}
@@ -146,7 +161,21 @@ exploration and model fitting.
   previous studies a lot - RSE lower (0.279) thus indicating a the response variable
   follows a log relationship to the independent variables in the model
 \section{Discussion}
-age and acres might have been able to be transformed in order to find a relationship
+  Due to the low correlations of fireplace we can assume that it is likely to be
+  a non-contributing variable and unlikely to come up in the final model\\
+  
+
+age and acres might have been able to be transformed in order to find a relationship - not really\\
+
+  Due to the multicollinearity shown by size, baths and bedrooms variables, we will
+  likely exclude one or two of these variables from the final model. The variable
+  with the highest correlation to the price is Size. Therefore Baths and Bedrooms
+  may end up exluded in the final model. \\
+  
+  At this point, the data would have pointed to removing all but the size variable from the model.\\
+  
+  perhaps a more thorough data exploration with more interaction terms + interaction terms with continuous vars in bins
+  and more in depth visualisations would aide in the creation of the final model.
 
 \bibliographystyle{apalike}
 \begin{thebibliography}{9}
@@ -182,5 +211,17 @@ Selim, S. (2008). DETERMINANTS OF HOUSE PRICES IN TURKEY: A HEDONIC REGRESSION M
   
   \emph{Figure 3 - Price by Fireplace boxplot}\\
   \includegraphics[scale=0.4]{price-fireplace.png}
+  
+  \emph{\\Figure 4 - Correlation coefficients for log transformed data}
+  \begin{Soutput}
+              Price  Size Baths Bedrooms Fireplace Acres   Age
+    Price      1.00  0.77  0.67     0.47      0.41  0.22 -0.39
+    Size       0.77  1.00  0.74     0.67      0.47  0.28 -0.42
+    Baths      0.67  0.74  1.00     0.51      0.45  0.17 -0.53
+    Bedrooms   0.47  0.67  0.51     1.00      0.30  0.22 -0.18
+    Fireplace  0.41  0.47  0.45     0.30      1.00  0.12 -0.29
+    Acres      0.22  0.28  0.17     0.22      0.12  1.00 -0.08
+    Age       -0.39 -0.42 -0.53    -0.18     -0.29 -0.08  1.00
+  \end{Soutput}
 
 \end{document}

@@ -17,11 +17,19 @@ df = read.table("../data/houseprices.txt", header = TRUE, sep = "\t")
 df$Fireplace <- as.factor(df$Fireplace)
 summary(df)
 
+df_logs = df
+df_logs$Acres = log10(df_logs$Acres + 1)
+df_logs$Age = log10(df_logs$Age + 1)
+summary(df_logs)
+
 ```
 
 ```{r fig.height=20, fig.width=30}
 plot(df)
+plot(df_logs)
 rcorr(as.matrix(df), type = c("pearson","spearman"))
+df_logs.matrix = as.matrix(df_logs)
+rcorr(df_logs.matrix, type = c("pearson","spearman"))
 ```
 
 ```{r fig.height=7, fig.width=10}
@@ -31,12 +39,14 @@ plot(df$Bedrooms, df$Price, xlab="# of Bedrooms", ylab="Price ($ ,000)", main="P
 plot(df$Fireplace, df$Price, xlab="has fireplace", ylab="Price ($ ,000)", main="Price by Fireplace")
 plot(df$Acres, df$Price, xlab="log(Acres)", ylab="Price ($ ,000)", main="Price by Acres")
 plot(df$Age, df$Price, xlab="Age (Years)", ylab="Price ($ ,000)", main="Price by Age")
-#plot(log(df$Acres), df$Price, xlab="Acres", ylab="Price ($ ,000)", main="Price by Acres")
+     
+plot(df_logs$Acres, df_logs$Price, xlab="log(Acres)", ylab="Price ($ ,000)", main="Price by log(Acres)")
+plot(df_logs$Age, df_logs$Price, xlab="log(Age) (Years)", ylab="Price ($ ,000)", main="Price by log(Age)")
 ```
 
 ```{r}
-df.full_lm <- lm(Price ~ ., data = df)
-df.full_res = lm(log(Price) ~ ., data = df)
+df.full_lm <- lm(Price ~ ., data = df_logs)
+df.full_res = lm(log(Price) ~ ., data = df_logs)
 summary(df.full_lm)
 summary(df.full_res)
 
