@@ -18,28 +18,29 @@ summary(df)
 ```
 
 ```{r fig.height=10, fig.width=15}
-plot(df$Size, df$Price)
-
-plot(df$Baths, df$Price)
-plot(df$Bedrooms, df$Price)
-plot(df$Fireplace, df$Price)
-plot(df$Acres, df$Price)
-plot(df$Age, df$Price)
+plot(df$Size, df$Price, xlab="Area (square ft)", ylab="Price ($ ,000)", main="Price by Size")
+plot(df$Baths, df$Price, xlab="# of Baths", ylab="Price ($ ,000)", main="Price by Baths")
+plot(df$Bedrooms, df$Price, xlab="# of Bedrooms", ylab="Price ($ ,000)", main="Price by Bedrooms")
+plot(df$Fireplace, df$Price, xlab="has fireplace", ylab="Price ($ ,000)", main="Price by Fireplace")
+plot(df$Acres, df$Price, xlab="Acres", ylab="Price ($ ,000)", main="Price by Acres")
+plot(df$Age, df$Price, xlab="Age (Years)", ylab="Price ($ ,000)", main="Price by Age")
 ```
 
 ```{r}
 df.full_lm <- lm(Price ~ ., data = df)
-df.full_res = resid(df.full_lm)
+df.full_res = lm(log(Price) ~ ., data = df)
 summary(df.full_lm)
+summary(df.full_res)
 
 
 
                 # the horizon
 ```
 
-```{r}
+```{r fig.height=5, fig.width=8}
 # log of response
-data.full_loglm = 
+plot(df.full_lm)
+plot(df.full_res)
 ```
 
 ```{r}
