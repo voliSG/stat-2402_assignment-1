@@ -31,15 +31,12 @@
 
 
 \section{Executive Summary}
-  Important aspects of the model - logarithmic
-  Important terms
-  Final Model\\
   This report aims to investigate the variables that influence house prices.
   The variables available for analysis include, house size, number of bedrooms,
   number of bathrooms, land size, age and presence of a fireplace. It was concluded that
   the main variables that influence house prices were, house size and its number of bathrooms;
   the age and presence of a fireplace were also used in obtaining an accurate prediction
-  of house prices. This can be modelled through the equation:
+  of house prices. This is modelled through the equation:
   
   \begin{center}
     \textbf{    \(\ln Price = \beta _0 + \beta _1 Size + \beta _2 Baths + \beta _3 Fireplace + \beta _4 \log_{10}Age + \varepsilon\)\\}
@@ -125,7 +122,7 @@ exploration and model fitting.
       \subitem - acres are all clustered closer to 0 (correlation: 0.18)
     \item Age - little to no linear relationship - heavily right skewed
       \subitem - majority of properties are grouped
-    towards 0 age (correlation: -0.26)\\
+    towards 0 age (correlation: -0.26)
   \end{itemize}
   
   Acres and age appeared to show a right skewed nature, therefore a logarithmic transformation was applied
@@ -167,13 +164,12 @@ exploration and model fitting.
     \includegraphics[width=8cm]{full-res.png}
     \includegraphics[width=8cm]{full-resln.png}
   \end{center}
-  First fitted the full model (without interactions) was fitted, without the interaction. And the residuals were plotted.
+  First, the full model (without interactions) was fitted, without the interaction. And the residuals were plotted. (\emph{see above})
   The errors to the fitted line were not constant and this was reflected in the high Residual Standard Error
   (52.15), thus confirming the presence of heteroskedasticity described in the literature.
   As suggested by previous studies, I applied a natural log function to the response variable.
   This model returned a much lower RSE of 0.279, thus indicating the response variable
   much closely follows a log relationship to the independent variables in the model.
-
   Next, the  starting model(with interactions) for is given by the formula:\\
 
   \(\ln Price = \beta _0 + \beta _1 Size + \beta _2 Baths + \beta _3 Bedrooms + \beta _4 Fireplace + \beta _5 \log_{10}Acres + \beta _6 \log_{10}Age + \beta _7 Fireplace*Size + \varepsilon\)\\
@@ -183,27 +179,30 @@ exploration and model fitting.
   
   \(\ln Price = \beta _0 + \beta _1 Size + \beta _2 Baths + \beta _3 Fireplace + \beta _4 \log_{10}Age + \varepsilon\)\\
   
-  The final model has an RSE of 0.2819, and adjusted R-squared of 0.6087 and a
-  F-statistic of 414.\\
+  The final model has an RSE of 0.2819, and adjusted R-squared of 0.6087.\\
 
 \section{Discussion}
-  Due to the low correlations of fireplace we can assume that it is likely to be
-  a non-contributing variable and unlikely to come up in the final model\\
-  
+  The final model model didn’t differ too much in adjusted R-squared or RSE values 
+  to the initial model. With the full model having a RSE of 0.282 and an adjusted 
+  R-squared of 0.6084, and the final model having a RSE of 0.819 and an adjusted 
+  R-squared of 0.687. This means that both models have a similar level of accuracy 
+  when predicting the price of a house. However, the final model holds much fewer 
+  variables which makes it better overall. From the variables included in the final
+  model and the correlation analysis, we can confirm that like Malpezzi’s study, 
+  number of rooms and house size are very significant variables that affect the 
+  house price. From the data exploration, we may have concluded from correlation 
+  analysis that age, acres and fireplace would safely be eliminated from the model 
+  as npn-contributing variables. And from collinear analysis that either size or 
+  baths may have had to be excluded from the model as they had high correlation.The 
+  transformation of age and acres did help a bit but I think deeper analysis with 
+  those variables should be done in future to find a more suitable transformation 
+  if available\\
 
-  age and acres might have been able to be transformed in order to find a relationship - not really\\
+  If this analysis were to be studied again, more work would need to be done in 
+  considering other interactions, not only with categorical variables like fireplace 
+  but also numerical ones. Also, data cleaning in the form of transforming outliers 
+  may be considered in order to improve the accuracy of the model fit.
 
-  Due to the multicollinearity shown by size, baths and bedrooms variables, we will
-  likely exclude one or two of these variables from the final model. The variable
-  with the highest correlation to the price is Size. Therefore Baths and Bedrooms
-  may end up exluded in the final model. \\
-  
-  At this point, the data would have pointed to removing all but the size variable from the model.\\
-  
-  perhaps a more thorough data exploration with more interaction terms + interaction terms with continuous vars in bins + interaction chosen may not have been overly relevant?
-  and more in depth visualisations would aide in the creation of the final model.\\
-  
-  Final Model - 
 
 \bibliographystyle{apalike}
 \begin{thebibliography}{9}
@@ -250,34 +249,6 @@ Selim, S. (2008). DETERMINANTS OF HOUSE PRICES IN TURKEY: A HEDONIC REGRESSION M
     Fireplace  0.41  0.47  0.45     0.30      1.00  0.12 -0.29
     Acres      0.22  0.28  0.17     0.22      0.12  1.00 -0.08
     Age       -0.39 -0.42 -0.53    -0.18     -0.29 -0.08  1.00
-  \end{Soutput}
-  
-  \emph{\\Figure 5 - Full model + Fireplace:Size Statistics\\}
-  $\ln Price = \beta _0 + \beta _1 Size + \beta _2 Baths + \beta _3 Bedrooms + \beta _4 Fireplace + \beta _5 \log_{10}Acres + \beta _6 \log_{10}Age + \beta _7 Fireplace*Size + \varepsilon$
-  \begin{Soutput}
-    Residual standard error: 0.282 on 1055 degrees of freedom
-    Multiple R-squared:  0.611,	Adjusted R-squared:  0.6084 
-    F-statistic: 236.7 on 7 and 1055 DF,  p-value: < 2.2e-16
-  \end{Soutput}
-
-  \emph{\\Figure 6 - Final model Statistics\\}
-  $\ln Price = \beta _0 + \beta _1 Size + \beta _2 Baths + \beta _3 Fireplace + \beta _4 \log_{10}Age + \varepsilon$
-  \begin{Soutput}
-    Residual standard error: 0.2819 on 1058 degrees of freedom
-    Multiple R-squared:  0.6101,	Adjusted R-squared:  0.6087 
-    F-statistic:   414 on 4 and 1058 DF,  p-value: < 2.2e-16
-  \end{Soutput}
-  
-  \emph{\\Figure 6 - Final model Statistics\\}
-  $\ln Price = \beta _0 + \beta _1 Size + \beta _3 Baths + \beta _5 Fireplace + \beta _7 \log_{10}Age + \varepsilon$
-  \begin{Soutput}
-Coefficients:
-             Estimate Std. Error t value Pr(>|t|)    
-(Intercept)   4.23022    0.04591  92.134  < 2e-16 ***
-Size          0.31402    0.01933  16.247  < 2e-16 ***
-Baths         0.13768    0.02097   6.564 8.19e-11 ***
-FireplaceYes  0.11638    0.02031   5.729 1.32e-08 ***
-Age          -0.09263    0.01791  -5.172 2.77e-07 ***
   \end{Soutput}
 
 
