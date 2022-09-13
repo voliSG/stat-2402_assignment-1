@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.9)  13 SEP 2022 00:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.9)  13 SEP 2022 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -239,126 +239,152 @@ Package caption Info: End \AtBeginDocument code.
 [1
 
 {c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for TS1+aer on input line 104.
+LaTeX Font Info:    Trying to load font information for TS1+aer on input line 118.
 (c:/Program Files/R/R-4.1.0/share/texmf/tex/latex/ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 104.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 118.
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--115
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--119
+Underfull \hbox (badness 10000) in paragraph at lines 127--129
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+Underfull \hbox (badness 10000) in paragraph at lines 131--133
 
  []
 
-<./visuals//price-acres.png, id=10, 722.7pt x 505.89pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
+<./visuals//price-acres.png, id=12, 722.7pt x 505.89pt>
 File: ./visuals//price-acres.png Graphic file (type png)
 <use ./visuals//price-acres.png>
-Package pdftex.def Info: ./visuals//price-acres.png  used on input line 122.
+Package pdftex.def Info: ./visuals//price-acres.png  used on input line 136.
 (pdftex.def)             Requested size: 227.62204pt x 159.33302pt.
-<./visuals//price-age.png, id=11, 722.7pt x 505.89pt>
+<./visuals//price-age.png, id=13, 722.7pt x 505.89pt>
 File: ./visuals//price-age.png Graphic file (type png)
 <use ./visuals//price-age.png>
-Package pdftex.def Info: ./visuals//price-age.png  used on input line 123.
+Package pdftex.def Info: ./visuals//price-age.png  used on input line 137.
 (pdftex.def)             Requested size: 227.62204pt x 159.33302pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
 
  []
 
-<./visuals//price-logacres.png, id=12, 722.7pt x 505.89pt>
+<./visuals//price-logacres.png, id=19, 722.7pt x 505.89pt>
 File: ./visuals//price-logacres.png Graphic file (type png)
 <use ./visuals//price-logacres.png>
-Package pdftex.def Info: ./visuals//price-logacres.png  used on input line 128.
+Package pdftex.def Info: ./visuals//price-logacres.png  used on input line 142.
 (pdftex.def)             Requested size: 227.62204pt x 159.33302pt.
-<./visuals//price-logage.png, id=13, 722.7pt x 505.89pt>
+<./visuals//price-logage.png, id=20, 722.7pt x 505.89pt>
 File: ./visuals//price-logage.png Graphic file (type png)
 <use ./visuals//price-logage.png>
-Package pdftex.def Info: ./visuals//price-logage.png  used on input line 129.
+Package pdftex.def Info: ./visuals//price-logage.png  used on input line 143.
 (pdftex.def)             Requested size: 227.62204pt x 159.33302pt.
-[2 <./visuals//price-acres.png> <./visuals//price-age.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--146
+Underfull \hbox (badness 10000) in paragraph at lines 155--161
 
  []
 
 <./visuals//int-fireplacesize.png, id=21, 722.7pt x 361.35pt>
 File: ./visuals//int-fireplacesize.png Graphic file (type png)
 <use ./visuals//int-fireplacesize.png>
-Package pdftex.def Info: ./visuals//int-fireplacesize.png  used on input line 147.
+Package pdftex.def Info: ./visuals//int-fireplacesize.png  used on input line 162.
 (pdftex.def)             Requested size: 426.79134pt x 213.39867pt.
-<./visuals//full-res.png, id=22, 578.16pt x 361.35pt>
+[3 <./visuals//price-acres.png> <./visuals//price-age.png> <./visuals//price-logacres.png> <./visuals//price-logage.png>]
+<./visuals//full-res.png, id=30, 578.16pt x 361.35pt>
 File: ./visuals//full-res.png Graphic file (type png)
 <use ./visuals//full-res.png>
-Package pdftex.def Info: ./visuals//full-res.png  used on input line 154.
+Package pdftex.def Info: ./visuals//full-res.png  used on input line 167.
 (pdftex.def)             Requested size: 227.62204pt x 142.26025pt.
-<./visuals//full-resln.png, id=23, 578.16pt x 361.35pt>
+<./visuals//full-resln.png, id=31, 578.16pt x 361.35pt>
 File: ./visuals//full-resln.png Graphic file (type png)
 <use ./visuals//full-resln.png>
-Package pdftex.def Info: ./visuals//full-resln.png  used on input line 155.
+Package pdftex.def Info: ./visuals//full-resln.png  used on input line 168.
 (pdftex.def)             Requested size: 227.62204pt x 142.26025pt.
-[3 <./visuals//price-logacres.png> <./visuals//price-logage.png> <./visuals//int-fireplacesize.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 164--166
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--174
+Underfull \hbox (badness 10000) in paragraph at lines 181--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
-[4 <./visuals//full-res.png> <./visuals//full-resln.png>]
-LaTeX Font Info:    Trying to load font information for T1+aett on input line 198.
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--188
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
+
+ []
+
+[4 <./visuals//int-fireplacesize.png> <./visuals//full-res.png> <./visuals//full-resln.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 196--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
+
+ []
+
+[5]
+LaTeX Font Info:    Trying to load font information for T1+aett on input line 226.
 (c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-<./visuals//plot.png, id=35, 2168.1pt x 1445.4pt>
+<./visuals//plot.png, id=42, 2168.1pt x 1445.4pt>
 File: ./visuals//plot.png Graphic file (type png)
 <use ./visuals//plot.png>
-Package pdftex.def Info: ./visuals//plot.png  used on input line 210.
+Package pdftex.def Info: ./visuals//plot.png  used on input line 238.
 (pdftex.def)             Requested size: 4336.18948pt x 2890.79297pt.
-<./visuals//price-fireplace.png, id=36, 1084.05pt x 722.7pt>
+<./visuals//price-fireplace.png, id=43, 1084.05pt x 722.7pt>
 File: ./visuals//price-fireplace.png Graphic file (type png)
 <use ./visuals//price-fireplace.png>
-Package pdftex.def Info: ./visuals//price-fireplace.png  used on input line 213.
+Package pdftex.def Info: ./visuals//price-fireplace.png  used on input line 241.
 (pdftex.def)             Requested size: 433.61232pt x 289.07487pt.
-[5 <./visuals//plot.png>] [6 <./visuals//price-fireplace.png>] (./ass_latex.aux) ) 
+[6 <./visuals//plot.png>] [7 <./visuals//price-fireplace.png>] [8] (./ass_latex.aux) ) 
 Here is how much of TeX's memory you used:
- 5014 strings out of 477035
- 90065 string characters out of 5826235
+ 5017 strings out of 477035
+ 90106 string characters out of 5826235
  420911 words of memory out of 5000000
- 26047 multiletter control sequences out of 15000+600000
- 491842 words of font info for 72 fonts, out of 8000000 for 9000
+ 26050 multiletter control sequences out of 15000+600000
+ 493805 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 69i,6n,79p,368b,210s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on ass_latex.pdf (6 pages, 245972 bytes).
+ 69i,6n,79p,368b,275s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/2003s/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on ass_latex.pdf (8 pages, 288732 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 100 PDF objects out of 1000 (max. 8388607)
+ 52 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
